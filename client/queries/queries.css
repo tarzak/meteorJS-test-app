@@ -1,0 +1,4 @@
+.table.queries tr td:first-child {
+    border: 0;
+    background-color: white;    
+}
