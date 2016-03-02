@@ -16,10 +16,11 @@ Template.mapBox.helpers({
 Template.mapBox.events({
     "keypress .search-input input": function (e, t) {
         var userId = Meteor.userId()
+            , queryText = e.target.value
             ;
 
         if (e.which === 13) {
-            
+            Meteor.call("insertQuery", {test:'test', query: queryText});
         }
     }
 })
