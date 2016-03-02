@@ -20,3 +20,4 @@ twbs:bootstrap
 accounts-google
 ian:accounts-ui-bootstrap-3
 service-configuration
+dburles:google-maps
