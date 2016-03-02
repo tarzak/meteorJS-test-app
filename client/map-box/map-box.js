@@ -11,4 +11,15 @@ Template.mapBox.helpers({
             }
         }
     }
+});
+
+Template.mapBox.events({
+    "keypress .search-input input": function (e, t) {
+        var userId = Meteor.userId()
+            ;
+
+        if (e.which === 13) {
+            
+        }
+    }
 })
