@@ -6,8 +6,8 @@ Meteor.methods({
                 userId: userId,
                 date: date,
                 query: object.query,
-                latitude: object.latitude,
-                longitude: object.longitude, 
+                lat: object.lat,
+                lng: object.lng, 
                 radius: object.radius
             }
             ;
