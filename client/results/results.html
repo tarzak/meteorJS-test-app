@@ -1,7 +1,7 @@
 <template name="results">
     <div>
         <h2 class="results">{{numberOfVenues}} venue{{plurality}}</h2>
-        <button class="results">Export CSV</button>
+        <button {{isDisabled}} class="btn btn-default results">Export CSV</button>
     </div>
     <div class="clearer"></div>
     <div class="table-responsive"> 

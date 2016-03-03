@@ -90,8 +90,8 @@ function clearMarkers (markers) {
 function formatVenue (venue) {
     var obj = {
         name: venue.name,
-        city: venue.location.city,
-        address: venue.location.address,
+        city: venue.location.city || '-',
+        address: venue.location.address || '-',
         lat: venue.location.lat,
         lng: venue.location.lng
     };

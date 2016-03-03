@@ -23,3 +23,4 @@ service-configuration
 dburles:google-maps
 oleh:foursquare
 check
+lfergon:exportcsv

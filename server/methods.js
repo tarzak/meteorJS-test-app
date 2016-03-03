@@ -14,6 +14,11 @@ Meteor.methods({
         if (userId) {
             Queries.insert(newQuery);
         }
-        console.log(newQuery);
+    },
+    exportCSV: function (array) {
+        var collection = array;
+        var heading = true; // Optional, defaults to true
+        var delimiter = ";" // Optional, defaults to ",";
+        return exportcsv.exportToCSV(collection, heading, delimiter);
     }
 });
