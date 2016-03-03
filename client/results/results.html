@@ -1,6 +1,9 @@
 <template name="results">
-    {{numberOfVenues}} <h2>venue{{plurality}}</h2>
-    <button>Export CSV</button>
+    <div>
+        <h2 class="results">{{numberOfVenues}} venue{{plurality}}</h2>
+        <button class="results">Export CSV</button>
+    </div>
+    <div class="clearer"></div>
     <div class="table-responsive"> 
         <table class="table table-striped"> 
             <thead> 
@@ -13,20 +16,9 @@
                 </tr> 
             </thead> 
             <tbody> 
-                <tr> 
-                    <th scope="row">1</th> 
-                    <td>Table cell</td> 
-                    <td>Table cell</td> 
-                    <td>Table cell</td> 
-                    <td>Table cell</td> 
-                </tr>
-                <tr> 
-                    <th scope="row">3</th> 
-                    <td>Table cell</td> 
-                    <td>Table cell</td> 
-                    <td>Table cell</td> 
-                    <td>Table cell</td>
-                </tr> 
+                {{#each results}}
+                    {{> resultRow}}
+                {{/each}}
             </tbody> 
         </table> 
     </div>

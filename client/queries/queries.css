@@ -7,3 +7,15 @@
     background-color: white;
     width: 1%;   
 }
+
+.table.queries tr td:nth-child(3), .table.queries tr td:nth-child(4) {
+    text-align: right;
+}
+
+.table.queries tr td:nth-child(5) {
+    text-align: center;
+}
+
+.table.queries tr td:nth-child(6) {
+    text-align: center;
+}

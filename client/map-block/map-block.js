@@ -29,7 +29,7 @@ Template.mapBlock.events({
                 userId: userId,
                 lat: map.center.lat(),
                 lng: map.center.lng(),
-                radius: radius
+                radius: radius/1000
             },
             params = {
                 query: queryText,
@@ -44,13 +44,14 @@ Template.mapBlock.events({
                     ;
 
                 if (venues && venues.length) {
+                    console.log(venues);
                     t.markers = venues.map(function(venue) {
                         var markerLocation = venue.location
                             , marker = new google.maps.Marker({
                                 position: {lat: markerLocation.lat, lng: markerLocation.lng},
                                 title: venue.name
                             });
-                        
+                        Venues.insert(formatVenue(venue));
                         marker.setMap(map);
                         return marker;
                     });
@@ -82,5 +83,17 @@ function clearMarkers (markers) {
         markers.forEach(function(marker) {
             marker.setMap(null);
         });
+        Venues.remove({});
     }
+}
+
+function formatVenue (venue) {
+    var obj = {
+        name: venue.name,
+        city: venue.location.city,
+        address: venue.location.address,
+        lat: venue.location.lat,
+        lng: venue.location.lng
+    };
+    return obj;
 }

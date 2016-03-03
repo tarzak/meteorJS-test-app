@@ -1,0 +1,12 @@
+.clearer {
+    clear: both;
+}
+
+button.results {
+    float: right;
+    margin-top: 20px;
+}
+
+h2.results {
+    float: left;
+}
