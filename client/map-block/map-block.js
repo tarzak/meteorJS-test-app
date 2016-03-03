@@ -1,8 +1,8 @@
-Template.mapBox.onRendered(function() {
+Template.mapBlock.onRendered(function() {
     GoogleMaps.load();
 });
 
-Template.mapBox.helpers({
+Template.mapBlock.helpers({
     exampleMapOptions: function () {
         if (GoogleMaps.loaded()) {
             return {
@@ -14,7 +14,7 @@ Template.mapBox.helpers({
     }
 });
 
-Template.mapBox.events({
+Template.mapBlock.events({
     "keypress .search-input input": function (e, t) {
         var userId = Meteor.userId()
             , queryText = e.target.value
