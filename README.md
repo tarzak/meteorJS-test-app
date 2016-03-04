@@ -8,7 +8,23 @@
 
 ### Run
 To run this app, you will need installed [MeteorJS](http://meteor.com) and cloned repo.
-Then get your developer API keys for [google](https://console.developers.google.com/home/dashboard) authentication, [Foursquare](https://foursquare.com/developers/apps). Insert them in `server/googleAuthConfig.js` and `server/foursquareConfig.js`.
+Then get your developer API keys for [google](https://console.developers.google.com/home/dashboard) authentication, [Foursquare](https://foursquare.com/developers/apps). Create `json` file and paste your keys into:
+```js
+{
+    "foursquare": {
+        "id": "ID_KEY",
+        "secret": "SECRET_KEY"
+    },
+    "googleAuth": {
+        "clientId": "CLIENT_ID_KEY",
+        "secret": "SECRET_KEY"
+    }
+}
+```
+After that, use something like that:
+```js
+meteor run --settings settings.json
+```
 
 ### Issues
 There is one known issue. Export of cyrilic symbols in CSV-file does not work properly, symbols are unreadable.
