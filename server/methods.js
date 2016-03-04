@@ -16,6 +16,14 @@ Meteor.methods({
             Queries.insert(newQuery);
         }
     },
+    removeQuery: function (id) {
+        var userId = this.userId
+            ;
+
+        if (userId) {
+            Queries.remove(id);
+        }
+    },
     exportCSV: function (array) {
         var collection = array;
         var heading = true; // Optional, defaults to true

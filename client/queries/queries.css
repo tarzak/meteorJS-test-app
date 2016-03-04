@@ -5,7 +5,8 @@
 .table.queries tr td:first-child {
     border: 0;
     background-color: white;
-    width: 1%;   
+    width: 1%; 
+    cursor: default;
 }
 
 .table.queries tr td:nth-child(3), .table.queries tr td:nth-child(4) {
@@ -18,4 +19,13 @@
 
 .table.queries tr td:nth-child(6) {
     text-align: center;
+}
+
+.glyphicon {
+    cursor: pointer;
+}
+
+table.queries tr:hover {
+    cursor: pointer;
+    background-color: #ccc;
 }
