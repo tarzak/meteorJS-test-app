@@ -37,7 +37,7 @@ Template.mapBlock.events({
                 radius: radius
             };
 
-            clearMarkers(markers);
+            WebApp.clearMarkers(markers);
 
             Foursquare.find(params, function(error, result) {
                 var venues = result.response.venues
@@ -76,16 +76,6 @@ function getRadius (radius) {
     }
     else {
         return 400
-    }
-}
-
-function clearMarkers (markers) {
-    if (markers && markers.length) {
-        markers.forEach(function(marker) {
-            marker.setMap(null);
-        });
-
-        Venues.remove({});
     }
 }
 
