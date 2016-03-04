@@ -32,6 +32,7 @@ Template.results.events({
         var nameFile = 'venues.csv'
             , venues = Venues.find({},{fields:{_id:0}}).fetch()
             ;
+            
         Meteor.call('exportCSV', venues, function(err, fileContent) {
             if (fileContent) {
                 var blob = new Blob([fileContent], {type: "text/plain;charset=utf-8"});

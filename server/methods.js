@@ -11,6 +11,7 @@ Meteor.methods({
                 radius: object.radius
             }
             ;
+            
         if (userId) {
             Queries.insert(newQuery);
         }

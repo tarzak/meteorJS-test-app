@@ -6,8 +6,8 @@ Template.mapBlock.helpers({
     exampleMapOptions: function () {
         if (GoogleMaps.loaded()) {
             return {
-                center: new google.maps.LatLng(-37.8136, 144.9631),
-                zoom: 8,
+                center: new google.maps.LatLng(0.0, 0.0),
+                zoom: 1,
                 scaleControl: true
             }
         }
@@ -44,15 +44,16 @@ Template.mapBlock.events({
                     ;
 
                 if (venues && venues.length) {
-                    console.log(venues);
                     t.markers = venues.map(function(venue) {
                         var markerLocation = venue.location
                             , marker = new google.maps.Marker({
                                 position: {lat: markerLocation.lat, lng: markerLocation.lng},
                                 title: venue.name
                             });
+
                         Venues.insert(formatVenue(venue));
                         marker.setMap(map);
+
                         return marker;
                     });
                 }
@@ -83,6 +84,7 @@ function clearMarkers (markers) {
         markers.forEach(function(marker) {
             marker.setMap(null);
         });
+
         Venues.remove({});
     }
 }
@@ -95,5 +97,6 @@ function formatVenue (venue) {
         lat: venue.location.lat,
         lng: venue.location.lng
     };
+    
     return obj;
 }
