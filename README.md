@@ -1,4 +1,5 @@
 # MeteorJS test-app.
+[demo](http://tarzak.meteor.com)
 
 ### Integrated APIs
 1. Google authentication.
@@ -11,3 +12,6 @@ Then get your developer API keys for [google](https://console.developers.google.
 
 ### Issues
 There is one known issue. Export of cyrilic symbols in CSV-file does not work properly, symbols are unreadable.
+
+### Future features
+- Removing user's queries with garbage bucket icon.
