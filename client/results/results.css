@@ -17,3 +17,7 @@ h2.results {
 .results tr th:nth-child(5) {
     text-align: right;
 }
+
+.results thead tr {
+    background-color: #ccc;
+}
