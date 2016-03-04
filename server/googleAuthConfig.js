@@ -2,9 +2,9 @@ ServiceConfiguration.configurations.upsert(
     { service: "google" },
     {
         $set: {
-            clientId: "Client_ID",
+            clientId: Meteor.settings.googleAuth.clientId,
             loginStyle: "popup",
-            secret: "Secret"
+            secret: Meteor.settings.googleAuth.secret
         }
     }
 );
